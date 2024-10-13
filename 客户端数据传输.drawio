@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.7.17">
+  <diagram name="第 1 页" id="WKFpE_g5VngR_prkOpTI">
+    <mxGraphModel dx="1304" dy="678" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gtf1DaYeksmCgysXEwOr-1" value="服务器通过TCP套接字发送骨骼位置信息" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="162" y="150" width="249" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-3" value="通过MsgBase解码器解析消息为JSON字符串" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="162.5" y="250" width="248" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-5" value="使用Newtonsoft.Json解析为Pose对象(对象包含用户ID和骨骼关节的三维坐标)" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="157" y="350" width="260" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-7" value="用户ID是否存在于字典中？" style="rhombus;strokeWidth=2;whiteSpace=wrap;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="178.75" y="440" width="216.5" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-8" value="更新虚拟角色的位置信息" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="570" width="238" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-9" value="创建新虚拟角色并添加到字典中" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="570" width="253" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-10" value="通过PlayerManager.StepJson将数据传递给虚拟角色模型同步给虚拟角色" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="157" y="670" width="253" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-12" value="用户离开摄像头时清除字典中的数据" style="whiteSpace=wrap;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="159" y="780" width="252" height="67" as="geometry" />
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-13" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.5;entryY=0;rounded=0;entryDx=0;entryDy=0;fontStyle=1" edge="1" parent="1" source="gtf1DaYeksmCgysXEwOr-1" target="gtf1DaYeksmCgysXEwOr-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="287" y="177" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-16" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;exitDx=0;exitDy=0;fontStyle=1" edge="1" parent="1" source="gtf1DaYeksmCgysXEwOr-3" target="gtf1DaYeksmCgysXEwOr-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="286.5" y="441" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-17" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;entryDx=0;entryDy=0;fontStyle=1" edge="1" parent="1" source="gtf1DaYeksmCgysXEwOr-5" target="gtf1DaYeksmCgysXEwOr-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="285" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-19" value="是" style="curved=1;startArrow=none;endArrow=block;exitX=0.03;exitY=1;entryX=0.527;entryY=0.007;rounded=0;entryDx=0;entryDy=0;entryPerimeter=0;fontStyle=1" edge="1" parent="1" source="gtf1DaYeksmCgysXEwOr-7" target="gtf1DaYeksmCgysXEwOr-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="149" y="523" />
+            </Array>
+            <mxPoint x="139" y="791" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-20" value="否" style="curved=1;startArrow=none;endArrow=block;exitX=0.97;exitY=1;entryX=0.5;entryY=0;rounded=0;fontStyle=1" edge="1" parent="1" source="gtf1DaYeksmCgysXEwOr-7" target="gtf1DaYeksmCgysXEwOr-9">
+          <mxGeometry x="-0.0021" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="523" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-21" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.14;entryY=0;rounded=0;exitDx=0;exitDy=0;fontStyle=1" edge="1" parent="1" source="gtf1DaYeksmCgysXEwOr-8" target="gtf1DaYeksmCgysXEwOr-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="660" />
+            </Array>
+            <mxPoint x="139" y="840" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-22" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=0.99;entryX=0.86;entryY=0;rounded=0;fontStyle=1" edge="1" parent="1" source="gtf1DaYeksmCgysXEwOr-9" target="gtf1DaYeksmCgysXEwOr-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gtf1DaYeksmCgysXEwOr-23" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1.01;entryX=0.5;entryY=0;rounded=0;entryDx=0;entryDy=0;fontStyle=1" edge="1" parent="1" source="gtf1DaYeksmCgysXEwOr-10" target="gtf1DaYeksmCgysXEwOr-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="284.0000000000001" y="960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
